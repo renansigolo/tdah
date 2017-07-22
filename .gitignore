@@ -4,3 +4,8 @@
 node_modules/
 platforms/
 plugins/
+.DS_Store
+hooks/.DS_Store
+resources/android/.DS_Store
+www/.DS_Store
+resources/.DS_Store
