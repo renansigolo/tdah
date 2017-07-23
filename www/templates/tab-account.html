@@ -1,9 +1,14 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <h2>Sua emoção</h2>
+        <p>Insira a URL da sua foto de hoje.</p>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-image placeholder-icon"></i>
+                <input ng-model="urlEntrada" type="text" placeholder="Foto">
+                {{urlEntrada}}
+            </label>
+            <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
+        </div>
+    </ion-content>
 </ion-view>
