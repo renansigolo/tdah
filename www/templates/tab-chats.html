@@ -1,35 +1,47 @@
 <ion-view view-title="Chats">
     <ion-content>
         <ion-list>
-            <button class="button button-full button-positive">
-                01. Teste
-            </button><button class="button button-full button-positive">
-                02. Info
-            </button><button class="button button-full button-positive">
-                03. Dicas
-            </button><button class="button button-full button-positive">
-                04. Organização
-            </button><button class="button button-full button-positive">
-                05. Estudos
-            </button><button class="button button-full button-positive">
-                06. Trabalho
-            </button><button class="button button-full button-positive">
-                07. Medicação
-            </button>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive">
+  01. Teste
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class=" button button-full button-positive ">
+  02. Info
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive ">
+  03. Dicas
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive ">
+  04. Organização
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive ">
+  05. Estudos
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive ">
+  06. Trabalho
+</button></ion-item>
+            <ion-item href="#/tab/chats/{{chat.id}}">
+                <button class="button button-full button-positive ">
+  07. Medicação
+</button></ion-item>
 
-            
+
             <!--
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-            <img ng-src="{{chat.face}}">
-            <h2>{{chat.name}}</h2>
-            <p>{{chat.lastText}}</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
-
-            <ion-option-button class="button-assertive" ng-click="remove(chat)">
-            Delete
-        </ion-option-button>
-    </ion-item>
+<ion-item class="item-remove-animate item-avatar item-icon-right " ng-repeat="chat in chats " type="item-text-wrap " href="#/tab/chats/{{chat.id}} ">
+    <img ng-src="{{chat.face}} ">
+    <h2>{{chat.name}}</h2>
+    <p>{{chat.lastText}}</p>
+    <i class="icon ion-chevron-right icon-accessory "></i>
+    <ion-option-button class="button-assertive " ng-click="remove(chat) ">
+        Delete
+    </ion-option-button>
+</ion-item>
 -->
-</ion-list>
-</ion-content>
+        </ion-list>
+    </ion-content>
 </ion-view>
