@@ -21,43 +21,85 @@ angular.module('starter.controllers', [])
     $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope, $http) {
+.controller('AccountCtrl', function($scope, $http, emotionApiService) {
 
-    $scope.urlEntrada = "pq";
+    $scope.dados = {};
+    $scope.enviado = false;
+    $scope.emocao = false;
+    $scope.maiorEmocao = 0;
 
-    console.log($scope.urlEntrada);
+    $scope.carregarFoto = function(){
+        console.log($scope.dados.url);
+        if($scope.dados.url == "")
+        {
+            alert("Por favor preencha o campo de link da imagem");
+            return;
+        }
 
-    $scope.carregarFoto = carregarFoto;
-
-    function carregarFoto(){
-
-        console.log($scope.urlEntrada);
-        // if($scope.url == "")
-        // {
-        //     alert("Por favor preencha o campo de link da imagem");
-        //     console.log($scope.url);
-        //     return;
-        // }
-        //
-        // else
-        // {
-        //     $http({
-        //         method: 'POST',
-        //         url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Ocp-Apim-Subscription-Key': '275d8596280a42b09a03251b73396358'
-        //         },
-        //         data: "{ url: '" + $scope.url + "' }"
-        //     }).then(function(respostaSucesso){
-        //         emotionApiService.SetResultadoApi(respostaSucesso.data[0]);
-        //         $scope.enviado = true;
-        //     }, function(respostaErro){
-        //         alert("Houve um erro na leitura de sua foto, por favor tente novamente ou envie outra foto.");
-        //     });
-        // }
+        else
+        {
+            $http({
+                method: 'POST',
+                url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Ocp-Apim-Subscription-Key': '275d8596280a42b09a03251b73396358'
+                },
+                data: "{ url: '" + $scope.dados.url + "' }"
+            }).then(function(respostaSucesso){
+                emotionApiService.SetResultadoApi(respostaSucesso.data[0]);
+                $scope.enviado = true;
+                console.log(emotionApiService.GetResultadoApi());
+            }, function(respostaErro){
+                alert("Houve um erro na leitura de sua foto, por favor tente novamente ou envie outra foto.");
+            });
+        }
     };
 
-    $scope.enviado = false;
+    $scope.encontrarSentimento = function() {
+        var resultado = emotionApiService.GetResultadoApi();
+        $scope.sentimentos = [
+            {
+                sentimento: 'com raiva',
+                valor: resultado.scores.anger
+            },
+            {
+                sentimento: 'com desprezo',
+                valor: resultado.scores.contempt
+            },
+            {
+                sentimento: 'com nojo',
+                valor: resultado.scores.disgust
+            },
+            {
+                sentimento: 'com medo',
+                valor: resultado.scores.fear
+            },
+            {
+                sentimento: 'feliz',
+                valor: resultado.scores.happiness
+            },
+            {
+                sentimento: 'neutro(a)',
+                valor: resultado.scores.neutral
+            },
+            {
+                sentimento: 'triste',
+                valor: resultado.scores.sadness
+            },
+            {
+                sentimento: 'surpreso(a)',
+                valor: resultado.scores.surprise
+            }
+        ];
+
+        for (var i = 0; i < 8; i++) {
+            if ($scope.maiorEmocao <= $scope.sentimentos[i].valor) {
+                $scope.maiorEmocao = $scope.sentimentos[i].valor;
+                $scope.sentimento = $scope.sentimentos[i].sentimento;
+            }
+        $scope.emocao = true;
+        }
+    }
 
 });

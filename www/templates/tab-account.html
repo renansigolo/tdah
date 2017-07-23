@@ -1,14 +1,21 @@
-<ion-view view-title="Account">
-    <ion-content>
-        <h2>Sua emoção</h2>
-        <p>Insira a URL da sua foto de hoje.</p>
-        <div class="list list-inset">
+<ion-view view-title="Emoção">
+    <ion-content class="padding">
+        <p ng-show="!enviado">Insira a URL da sua foto de hoje.</p>
+        <div class="list list-inset" ng-show="!enviado">
             <label class="item item-input">
                 <i class="icon ion-image placeholder-icon"></i>
-                <input ng-model="urlEntrada" type="text" placeholder="Foto">
-                {{urlEntrada}}
+                <input ng-model="dados.url" type="text" placeholder="Foto">
             </label>
             <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
+        </div>
+        <div class="row img-carregada" ng-show="!sentimento">
+            <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
+        </div>
+        <div ng-show="!sentimento">
+            <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
+        </div>
+        <div class="emocao-revelada">
+            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}}.</h1>
         </div>
     </ion-content>
 </ion-view>
