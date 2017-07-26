@@ -113,6 +113,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     }
                 }
             })
+            .state('tab.celebridades', {
+                url: '/chats/celebridades',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/celebridades.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
             .state('tab.chat-detail', {
                 url: '/chats/:chatId',
                 views: {
