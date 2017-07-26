@@ -113,6 +113,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     }
                 }
             })
+            .state('tab.materiais', {
+                url: '/chats/materiais',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/materiais.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
+            .state('tab.organizacao', {
+                url: '/chats/organizacao',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/organizacao.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
+            .state('tab.estudando', {
+                url: '/chats/estudando',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/estudando.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
             .state('tab.celebridades', {
                 url: '/chats/celebridades',
                 views: {
