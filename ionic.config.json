@@ -1,6 +1,6 @@
 {
   "name": "tdah",
-  "app_id": "",
+  "app_id": "cea9dcd9",
   "type": "ionic1",
   "watchPatterns": [
     "scss/**/*"
