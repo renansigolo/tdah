@@ -23,6 +23,8 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope, $http, emotionApiService) {
 
+    // var defaultStorageRef = firebase.storage().ref('gs://first-68f8a.appspot.com/');
+
     $scope.dados = {};
     $scope.enviado = false;
     $scope.emocao = false;

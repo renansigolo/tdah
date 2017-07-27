@@ -1,6 +1,6 @@
 <ion-view view-title="Emoção">
     <ion-content class="padding">
-        <p ng-show="!enviado">Insira a URL da sua foto de hoje.</p>
+        <p ng-show="!enviado">URL.</p>
         <div class="list list-inset" ng-show="!enviado">
             <label class="item item-input">
                 <i class="icon ion-image placeholder-icon"></i>
@@ -15,7 +15,35 @@
             <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
         </div>
         <div class="emocao-revelada">
-            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}}.</h1>
+            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
         </div>
+
+        <p ng-show="!enviado">ARQUIVO.</p>
+        <div class="list list-inset" ng-show="!enviado">
+            <form action="gs://tdah-bb38c.appspot.com/">
+                <div class="">
+                    <div class="input-group">
+                        <label class="input-group-button">
+                            <span class="button btn-file">
+                                Escolher&hellip; <input type="file" name="newFile" id="file" style="display: none;">
+                            </span>
+                        </label>
+                        <input type="text" class="">
+                    </div>
+                    <input type="submit" class="button button-block button-positive enviar" value="Enviar">
+                </div>
+            </form>
+            <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
+        </div>
+        <div class="row img-carregada" ng-show="!sentimento">
+            <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
+        </div>
+        <div ng-show="!sentimento">
+            <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
+        </div>
+        <div class="emocao-revelada">
+            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
+        </div>
+
     </ion-content>
 </ion-view>
