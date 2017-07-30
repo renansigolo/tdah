@@ -21,9 +21,9 @@ angular.module('starter.controllers', [])
     $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope, $http, emotionApiService) {
+.controller('AccountCtrl', function($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
 
-    // var defaultStorageRef = firebase.storage().ref('gs://first-68f8a.appspot.com/');
+    
 
     $scope.dados = {};
     $scope.enviado = false;
