@@ -86,29 +86,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-            .state('tab.saude', {
-                url: '/chats/saude',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/saude.html',
-                        controller: 'CriancaCtrl'
-                    }
-                }
-            })
             .state('tab.diagnostico-caracteristica', {
                 url: '/chats/diagnostico-caracteristica',
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-caracteristica.html',
-                        controller: 'ChatsCtrl'
-                    }
-                }
-            })
-            .state('tab.medicacao', {
-                url: '/chats/medicacao',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/medicacao.html',
                         controller: 'ChatsCtrl'
                     }
                 }
@@ -149,6 +131,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
+            .state('tab.saude', {
+                url: '/chats/saude',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/saude.html',
+                        controller: 'CriancaCtrl'
+                    }
+                }
+            })
+            .state('tab.medicacao', {
+                url: '/chats/medicacao',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/medicacao.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
             .state('tab.celebridades', {
                 url: '/chats/celebridades',
                 views: {
@@ -167,7 +167,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-
             .state('tab.account', {
                 url: '/account',
                 views: {
