@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-crianca.html',
-                        controller: 'ChatsCtrl'
+                        controller: 'CriancaCtrl'
                     }
                 }
             })
@@ -82,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-adulto.html',
-                        controller: 'ChatsCtrl'
+                        controller: 'CriancaCtrl'
                     }
                 }
             })
