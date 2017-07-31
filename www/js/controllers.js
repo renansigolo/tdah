@@ -21,17 +21,11 @@ angular.module('starter.controllers', [])
         $scope.chat = Chats.get($stateParams.chatId);
     })
 
-<<<<<<< HEAD
-.controller('AccountCtrl', function($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
-
-    
-=======
     .controller('CriancaCtrl', function ($scope, $stateParams) {
         $scope.validacao = validacao;
         $scope.dados = {};
         var resultado = 0;
         $scope.resultado = resultado;
->>>>>>> diagnosticos funcionando
 
         function validacao() {
             console.log($scope.dados.choice1);
@@ -44,7 +38,9 @@ angular.module('starter.controllers', [])
         };
     })
 
-    .controller('AccountCtrl', function ($scope, $http, emotionApiService) {
+    .controller('AccountCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
+
+
 
         $scope.dados = {};
         $scope.enviado = false;
