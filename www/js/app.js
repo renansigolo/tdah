@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-crianca.html',
-                        controller: 'ChatsCtrl'
+                        controller: 'CriancaCtrl'
                     }
                 }
             })
@@ -82,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-adulto.html',
-                        controller: 'ChatsCtrl'
+                        controller: 'CriancaCtrl'
                     }
                 }
             })
@@ -91,15 +91,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                 views: {
                     'tab-chats': {
                         templateUrl: 'templates/diagnostico-caracteristica.html',
-                        controller: 'ChatsCtrl'
-                    }
-                }
-            })
-            .state('tab.medicacao', {
-                url: '/chats/medicacao',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/medicacao.html',
                         controller: 'ChatsCtrl'
                     }
                 }
@@ -140,6 +131,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                     }
                 }
             })
+            .state('tab.saude', {
+                url: '/chats/saude',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/saude.html',
+                        controller: 'CriancaCtrl'
+                    }
+                }
+            })
+            .state('tab.medicacao', {
+                url: '/chats/medicacao',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/medicacao.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
             .state('tab.celebridades', {
                 url: '/chats/celebridades',
                 views: {
@@ -158,7 +167,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
                     }
                 }
             })
-
             .state('tab.account', {
                 url: '/account',
                 views: {
