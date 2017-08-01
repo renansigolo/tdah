@@ -23,12 +23,16 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
 
-    
+    console.log(storage);
+
+    var storageRef = storage.ref();
 
     $scope.dados = {};
     $scope.enviado = false;
     $scope.emocao = false;
     $scope.maiorEmocao = 0;
+
+    console.log($scope.dados.newFile);
 
     $scope.carregarFoto = function(){
         console.log($scope.dados.url);
@@ -100,7 +104,7 @@ angular.module('starter.controllers', [])
                 $scope.maiorEmocao = $scope.sentimentos[i].valor;
                 $scope.sentimento = $scope.sentimentos[i].sentimento;
             }
-        $scope.emocao = true;
+            $scope.emocao = true;
         }
     }
 

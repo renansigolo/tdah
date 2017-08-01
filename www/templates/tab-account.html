@@ -25,15 +25,15 @@
                     <div class="input-group">
                         <label class="input-group-button">
                             <span class="button btn-file">
-                                Escolher&hellip; <input type="file" name="newFile" id="file" style="display: none;">
+                                Escolher&hellip; <input type="file" ng-model="dados.newFile"  style="display: none;" id="file"  class="button">{{dados.newFile}}
                             </span>
                         </label>
                         <input type="text" class="">
                     </div>
-                    <input type="submit" class="button button-block button-positive enviar" value="Enviar">
+                    <input type="submit" class="button button-block button-positive enviar" value="Carregar Foto">
                 </div>
             </form>
-            <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
+            <button ng-click="carregarFoto()" class="button button-block button-positive">Enviar foto para análise</button>
         </div>
         <div class="row img-carregada" ng-show="!sentimento">
             <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
