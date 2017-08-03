@@ -15,7 +15,7 @@
             <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
             <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-positive">Enviar outra foto</button>
         </div>
-        <div class="emocao-revelada" ng-show="emocao" class="align-center">
+        <div class="emocao-revelada" ng-show="emocao" style="text-align:center">
             <h1>Você está se sentindo <strong>{{sentimento}}</strong> nesta foto.</h1>
             <ion-list>
                 <li class="item item-divider bar bar-header bar-energized item-text-wrap" ng-show="sugestao">
