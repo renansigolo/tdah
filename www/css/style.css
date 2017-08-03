@@ -34,5 +34,9 @@
 }
 
 .bar-header {
-    padding-bottom: 8vh;
+    padding-bottom: 6vh;
+}
+
+#frase-emocao {
+    margin-top: 3vh;
 }

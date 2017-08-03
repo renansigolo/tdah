@@ -1,6 +1,6 @@
 <ion-view view-title="Emoção">
     <ion-content class="padding">
-        <p ng-show="!enviado">URL.</p>
+        <h3 ng-show="!enviado" id="frase-emocao" class="align-center">Cole o endereço (URL) da foto no campo abaixo</h3>
         <div class="list list-inset" ng-show="!enviado">
             <label class="item item-input">
                 <i class="icon ion-image placeholder-icon"></i>
@@ -15,15 +15,15 @@
             <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
             <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-positive">Enviar outra foto</button>
         </div>
-        <div class="emocao-revelada" ng-show="emocao" style="text-align:center">
-            <h1>Você está se sentindo <strong>{{sentimento}}</strong> nesta foto.</h1>
+        <div class="emocao-revelada" ng-show="emocao">
+            <h1 class="align-center">Você está se sentindo <strong>{{sentimento}}</strong> nesta foto.</h1>
             <ion-list>
                 <li class="item item-divider bar bar-header bar-energized item-text-wrap" ng-show="sugestao">
                     {{sugestao}}
                 </li>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao1">{{sugestao1}}</ion-checkbox>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao2">{{sugestao2}}</ion-checkbox>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao3">{{sugestao3}}</ion-checkbox>
+                <ion-item class="item-text-wrap" ng-show="sugestao1">{{sugestao1}}</ion-item>
+                <ion-item class="item-text-wrap" ng-show="sugestao2">{{sugestao2}}</ion-item>
+                <ion-item class="item-text-wrap" ng-show="sugestao3">{{sugestao3}}</ion-item>
             </ion-list>
             <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-positive">Analisar outra emoção</button>
         </div>
