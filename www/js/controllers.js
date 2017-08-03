@@ -103,10 +103,10 @@ angular.module('starter.controllers', [])
                 {
                     sentimento: 'com nojo',
                     valor: resultado.scores.disgust,
-                    sugestao: 'NOJO',
-                    sugestao1: 'P1seguintes sugestões:',
-                    sugestao2: 'P2tente as seguintes sugestões:',
-                    sugestao3: 'Pa3te as seguintes sugestões:',
+                    sugestao: 'Para miminizar o sentimento de nojo tente as seguintes sugetões',
+                    sugestao1: 'Tente entender o lado alheio',
+                    sugestao2: 'Saiba que nem todos funcionam da mesma forma',
+                    sugestao3: 'Pense que ações diferentes geram atitudes diferentes',
             },
                 {
                     sentimento: 'com medo',
@@ -127,26 +127,26 @@ angular.module('starter.controllers', [])
                 {
                     sentimento: 'neutro(a)',
                     valor: resultado.scores.neutral,
-                    sugestao: 'NEUTRO',
-                    sugestao1: 'P1seguintes sugestões:',
-                    sugestao2: 'P2tente as seguintes sugestões:',
-                    sugestao3: 'Pa3te as seguintes sugestões:',
+                    sugestao: 'Aproveite o estado neutro para',
+                    sugestao1: 'Criar novas ideias',
+                    sugestao2: 'Planejar futuras ações',
+                    sugestao3: 'Organizar suas coisas',
             },
                 {
                     sentimento: 'triste',
                     valor: resultado.scores.sadness,
                     sugestao: 'Para diminuir sua tristeza tente as seguintes sugestões:',
-                    sugestao1: 'P1seguintes sugestões:',
-                    sugestao2: 'P2tente as seguintes sugestões:',
-                    sugestao3: 'Pa3te as seguintes sugestões:',
+                    sugestao1: 'Lembre-se da sua âncora',
+                    sugestao2: 'Pense em pessoas que te deixem feliz',
+                    sugestao3: 'Lembre de momentos felizes',
             },
                 {
                     sentimento: 'surpreso(a)',
                     valor: resultado.scores.surprise,
                     sugestao: 'Para minimizar o estado de surpresa tente o seguinte',
-                    sugestao1: 'SURPRESA',
-                    sugestao2: 'SURPRESA',
-                    sugestao3: 'SURPRESA',
+                    sugestao1: 'Tente se lembrar de situações semelhantes a essa',
+                    sugestao2: 'Busque situações similares',
+                    sugestao3: 'Tente reagir de uma forma neutra frente a esta situação',
             }
         ];
 
