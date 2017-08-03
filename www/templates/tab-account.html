@@ -13,12 +13,22 @@
         </div>
         <div ng-show="!sentimento">
             <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
+            <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-positive">Enviar outra foto</button>
         </div>
-        <div class="emocao-revelada">
-            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
+        <div class="emocao-revelada" ng-show="emocao" class="align-center">
+            <h1>Você está se sentindo <strong>{{sentimento}}</strong> nesta foto.</h1>
+            <ion-list>
+                <li class="item item-divider bar bar-header bar-energized item-text-wrap" ng-show="sugestao">
+                    {{sugestao}}
+                </li>
+                <ion-checkbox class="item-text-wrap" ng-show="sugestao1">{{sugestao1}}</ion-checkbox>
+                <ion-checkbox class="item-text-wrap" ng-show="sugestao2">{{sugestao2}}</ion-checkbox>
+                <ion-checkbox class="item-text-wrap" ng-show="sugestao3">{{sugestao3}}</ion-checkbox>
+            </ion-list>
+            <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-positive">Analisar outra emoção</button>
         </div>
 
-        <p ng-show="!enviado">ARQUIVO.</p>
+        <!-- <p ng-show="!enviado">ARQUIVO.</p>
         <div class="list list-inset" ng-show="!enviado">
             <form action="gs://tdah-bb38c.appspot.com/">
                 <div class="">
@@ -34,8 +44,8 @@
                 </div>
             </form>
             <button ng-click="carregarFoto()" class="button button-block button-positive">Enviar foto para análise</button>
-        </div>
-        <div class="row img-carregada" ng-show="!sentimento">
+        </div> -->
+        <!-- <div class="row img-carregada" ng-show="!sentimento">
             <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
         </div>
         <div ng-show="!sentimento">
@@ -43,15 +53,8 @@
         </div>
         <div class="emocao-revelada">
             <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
-            <ion-list>
-                <li class="item item-divider bar bar-header bar-energized item-text-wrap" ng-show="sugestao">
-                    {{sugestao}}
-                </li>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao1">{{sugestao1}}</ion-checkbox>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao2">{{sugestao2}}</ion-checkbox>
-                <ion-checkbox class="item-text-wrap" ng-show="sugestao3">{{sugestao3}}</ion-checkbox>
-            </ion-list>
-        </div>
+
+        </div> -->
 
     </ion-content>
 </ion-view>

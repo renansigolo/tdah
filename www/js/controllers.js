@@ -69,6 +69,18 @@ angular.module('starter.controllers', [])
             }
         };
 
+        $scope.enviarNovaFoto = function(){
+            $scope.dados.url = "";
+            $scope.enviado = false;
+        }
+
+        $scope.enviarNovaEmocao = function() {
+            $scope.enviado = false;
+            $scope.emocao = false;
+            $scope.maiorEmocao = 0;
+            $scope.dados.url = "";
+        }
+
         $scope.encontrarSentimento = function () {
             var resultado = emotionApiService.GetResultadoApi();
             $scope.sentimentos = [
