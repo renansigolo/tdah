@@ -1,5 +1,16 @@
 /* Empty. Add your own CSS if you like */
 
+
+/*Top Header distance*/
+
+.bar-header {
+    padding-bottom: 4vh;
+}
+
+#frase-emocao {
+    margin-top: 3vh;
+}
+
 .img-url {
     width: 100%;
     height: 100%;
@@ -10,6 +21,9 @@
     border: 0.5px solid lightgrey;
     border-radius: 4px;
 }
+
+
+/*Youtube Player*/
 
 .video-container {
     position: relative;
@@ -27,16 +41,4 @@
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.align-center {
-    text-align: center;
-}
-
-.bar-header {
-    padding-bottom: 6vh;
-}
-
-#frase-emocao {
-    margin-top: 3vh;
 }
