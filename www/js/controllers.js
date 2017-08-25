@@ -1,11 +1,8 @@
 angular.module('starter.controllers', [])
 
     .controller('HelpCtrl', function ($scope) {})
-
-    .controller('ChatsCtrl', function ($scope) {})
-
+    .controller('GuideCtrl', function ($scope) {})
     .controller('DiagnosticsCtrl', function ($scope) {})
-
     .controller('DiagnosticsChildrenCtrl', function ($scope, $stateParams) {
         //        $scope.validacao = validacao;
         //        $scope.dados = {};
@@ -22,7 +19,6 @@ angular.module('starter.controllers', [])
         //
         //        };
     })
-
     .controller('DiagnosticsAdultsCtrl', function ($scope) {})
     .controller('DiagnosticsCharacteristicsCtrl', function ($scope) {})
     .controller('InformationsCtrl', function ($scope) {})
