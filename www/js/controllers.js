@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
         //        };
     })
 
-    .controller('AccountCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
+    .controller('EmotionsCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
 
         $scope.dados = {};
         $scope.enviado = false;

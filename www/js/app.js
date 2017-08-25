@@ -167,12 +167,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-            .state('tab.account', {
-                url: '/account',
+            .state('tab.emotions', {
+                url: '/emotions',
                 views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-account.html',
-                        controller: 'AccountCtrl'
+                    'tab-emotions': {
+                        templateUrl: 'templates/tab-emotions.html',
+                        controller: 'EmotionsCtrl'
                     }
                 }
             });
