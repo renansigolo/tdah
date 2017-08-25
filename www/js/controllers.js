@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-    .controller('DashCtrl', function ($scope) {})
+    .controller('HelpCtrl', function ($scope) {})
 
     .controller('ChatsCtrl', function ($scope, Chats) {
         // With the new view caching in Ionic, Controllers are only called
@@ -22,20 +22,20 @@ angular.module('starter.controllers', [])
     })
 
     .controller('CriancaCtrl', function ($scope, $stateParams) {
-        $scope.validacao = validacao;
-        $scope.dados = {};
-        var resultado = 0;
-        $scope.resultado = resultado;
-
-        function validacao() {
-            console.log($scope.dados.choice1);
-            console.log($scope.dados.choice2);
-            console.log(resultado);
-            console.log($scope.resultado);
-
-            $scope.resultado.sum = dados.choice1 + dados.choice2;
-
-        };
+        //        $scope.validacao = validacao;
+        //        $scope.dados = {};
+        //        var resultado = 0;
+        //        $scope.resultado = resultado;
+        //
+        //        function validacao() {
+        //            console.log($scope.dados.choice1);
+        //            console.log($scope.dados.choice2);
+        //            console.log(resultado);
+        //            console.log($scope.resultado);
+        //
+        //            $scope.resultado.sum = dados.choice1 + dados.choice2;
+        //
+        //        };
     })
 
     .controller('AccountCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
@@ -69,12 +69,12 @@ angular.module('starter.controllers', [])
             }
         };
 
-        $scope.enviarNovaFoto = function(){
+        $scope.enviarNovaFoto = function () {
             $scope.dados.url = "";
             $scope.enviado = false;
         }
 
-        $scope.enviarNovaEmocao = function() {
+        $scope.enviarNovaEmocao = function () {
             $scope.enviado = false;
             $scope.emocao = false;
             $scope.maiorEmocao = 0;
