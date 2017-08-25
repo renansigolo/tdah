@@ -1,9 +1,9 @@
 <ion-view view-title="Adultos">
     <ion-content class="padding">
-        <h2 class="align-center">Diagnóstico em Adultos</h2>
+        <h2 class="text-center">Diagnóstico em Adultos</h2>
         <hr>
         <div class="card">
-            <div class="item item-divider bar bar-header bar-energized align-center">Desatenção</div>
+            <div class="item item-divider bar bar-header bar-energized text-center">Desatenção</div>
             <p class="item item-divider item-text-wrap">1. Com que freqüência você comete erros por falta de atenção quando tem de trabalhar num projeto chato ou difícil? </p>
             <ion-list>
                 <ion-radio name="choice1" ng-model="dados.choice1" value="1">Sim</ion-radio>
@@ -60,7 +60,7 @@
             <br>
         </div>
         <div class="card">
-            <div class="item item-divider bar bar-header bar-royal align-center">Hiperatividade</div>
+            <div class="item item-divider bar bar-header bar-royal text-center">Hiperatividade</div>
             <p class="item item-divider item-text-wrap">1. Com que freqüência você fica se mexendo na cadeira ou balançando as mãos ou os pés quando precisa ficar sentado (a) por muito tempo? </p>
             <ion-list>
                 <ion-radio name="choice10" ng-model="dados.choice10" ng-value="1">Sim</ion-radio>
@@ -115,17 +115,17 @@
                 <ion-radio name="choice18" ng-model="dados.choice18" ng-value="0">Não</ion-radio>
             </ion-list>
         </div>
-        <br>
+        <h2 class="text-center">Resultados</h2>
         <hr>
         <!--Se existem pelo menos 6 itens marcados como “BASTANTE” ou “DEMAIS” de 10 a 18-->
         <div class="card">
-            <div class="item item-divider bar bar-header bar-energized align-center">Desatenção</div>
+            <div class="item item-divider bar bar-header bar-energized text-center">Desatenção</div>
             <div class="item item-text-wrap">O resultado é: {{ dados.choice1 -- dados.choice2 -- dados.choice3 -- dados.choice4 -- dados.choice5 -- dados.choice6 -- dados.choice7 -- dados.choice8 -- dados.choice9 }}</div>
             <div class="item item-text-wrap">Se o resultado for maior ou igual a 4. Existem mais sintomas de desatenção que o esperado numa criança ou adolescente.</div>
         </div>
         <!--Se existem pelo menos 6 itens marcados como “BASTANTE” ou “DEMAIS” de 1 a 9-->
         <div class="card">
-            <div class="item item-divider bar bar-header bar-royal align-center">Hiperatividade</div>
+            <div class="item item-divider bar bar-header bar-royal text-center">Hiperatividade</div>
             <div class="item item-text-wrap">O resultado é: {{ dados.choice10 -- dados.choice11 -- dados.choice12 -- dados.choice13 -- dados.choice14 -- dados.choice15 -- dados.choice16 -- dados.choice17 -- dados.choice18 }}</div>
             <div class="item item-text-wrap">Se o resultado for maior ou igual a 4. Existem mais sintomas de hiperatividade e impulsividade que o esperado numa criança ou adolescente.</div>
         </div>
@@ -133,21 +133,41 @@
             <div class="item item-divider item-text-wrap">Notas</div>
             <div class="item item-divider item-text-wrap">Se os itens de desatenção da parte A (1 a 9) E/OU os itens de hiperatividade-impulsividade da parte B (1 a 9) têm várias respostas marcadas como FREQUENTEMENTE ou MUITO FREQUENTEMENTE existe chances de ser portador de TDAH (pelo menos 4 em cada uma das partes).<br>O questionário ASRS-18 é útil para avaliar apenas o primeiro dos critérios (critério A) para se fazer o diagnóstico. Existem outros critérios que também são necessários.<br><br>IMPORTANTE: Não se pode fazer o diagnóstico de TDAH apenas com os sintomas descritos na tabela! Veja abaixo os demais critérios.</div>
             <ul class="list">
-                <li class="item item-text-wrap">
-                    CRITÉRIO A: Sintomas (vistos acima)
-                </li>
-                <li class="item item-text-wrap">
-                    CRITÉRIO B: Alguns desses sintomas devem estar presentes desde precocemente (até 12 anos).
-                </li>
-                <li class="item item-text-wrap">
-                    CRITÉRIO C: Existem problemas causados pelos sintomas acima em pelo menos 2 contextos diferentes (por ex., no trabalho, na vida social, na faculdade e no relacionamento conjugal ou familiar).
-                </li>
-                <li class="item item-text-wrap">
-                    CRITÉRIO D: Há problemas evidentes por conta dos sintomas.
-                </li>
-                <li class="item item-text-wrap">
-                    CRITÉRIO E: Se existe um outro transtorno (tal como depressão, deficiência mental, psicose, etc.), os sintomas não podem ser atribuídos exclusivamente a ele.
-                </li>
+                <div class="item item-avatar">
+                    <img src="img/letters/A.jpg">
+                    <h2>CRITÉRIO A</h2>
+                    <div class="item-text-wrap">
+                        <p>Sintomas (vistos acima)</p>
+                    </div>
+                </div>
+                <div class="item item-avatar">
+                    <img src="img/letters/B.jpg">
+                    <h2>CRITÉRIO B</h2>
+                    <div class="item-text-wrap">
+                        <p>Alguns desses sintomas devem estar presentes desde precocemente (até 12 anos).</p>
+                    </div>
+                </div>
+                <div class="item item-avatar">
+                    <img src="img/letters/C.jpg">
+                    <h2>CRITÉRIO C</h2>
+                    <div class="item-text-wrap">
+                        <p>Existem problemas causados pelos sintomas acima em pelo menos 2 contextos diferentes (por ex., no trabalho, na vida social, na faculdade e no relacionamento conjugal ou familiar).</p>
+                    </div>
+                </div>
+                <div class="item item-avatar">
+                    <img src="img/letters/D.jpg">
+                    <h2>CRITÉRIO D</h2>
+                    <div class="item-text-wrap">
+                        <p>Há problemas evidentes por conta dos sintomas.</p>
+                    </div>
+                </div>
+                <div class="item item-avatar">
+                    <img src="img/letters/E.jpg">
+                    <h2>CRITÉRIO E</h2>
+                    <div class="item-text-wrap">
+                        <p>Se existe um outro transtorno (tal como depressão, deficiência mental, psicose, etc.), os sintomas não podem ser atribuídos exclusivamente a ele.</p>
+                    </div>
+                </div>
             </ul>
         </div>
     </ion-content>

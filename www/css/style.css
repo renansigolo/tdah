@@ -42,3 +42,7 @@
     width: 100%;
     height: 100%;
 }
+
+.two-line-header {
+    padding-bottom: 7vh;
+}
