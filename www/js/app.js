@@ -23,6 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         });
     })
 
+    //Routes Configuration
+
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
@@ -40,6 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
             // Each tab has its own nav history stack:
 
+            // Tab Ajuda
             .state('tab.help', {
                 url: '/help',
                 views: {
@@ -50,6 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
 
+            // Tab Guia
             .state('tab.chats', {
                 url: '/chats',
                 views: {
@@ -59,114 +63,119 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-            .state('tab.diagnostico', {
-                url: '/chats/diagnostico',
+
+            //Child Tabs from Guia 
+            .state('tab.diagnostics', {
+                url: '/chats/diagnostics',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/diagnostico.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/diagnostics.html',
+                        controller: 'DiagnosticsCtrl'
                     }
                 }
             })
-            .state('tab.diagnostico-crianca', {
-                url: '/chats/diagnostico-crianca',
+            .state('tab.diagnostics-children', {
+                url: '/chats/diagnostics-children',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/diagnostico-crianca.html',
-                        controller: 'CriancaCtrl'
+                        templateUrl: 'templates/diagnostics-children.html',
+                        controller: 'DiagnosticsChildrenCtrl'
                     }
                 }
             })
-            .state('tab.diagnostico-adulto', {
-                url: '/chats/diagnostico-adulto',
+            .state('tab.diagnostics-adulto', {
+                url: '/chats/diagnostics-adulto',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/diagnostico-adulto.html',
-                        controller: 'CriancaCtrl'
+                        templateUrl: 'templates/diagnostics-adults.html',
+                        controller: 'DiagnosticsAdultsCtrl'
                     }
                 }
             })
-            .state('tab.diagnostico-caracteristica', {
-                url: '/chats/diagnostico-caracteristica',
+            .state('tab.diagnostics-characteristics', {
+                url: '/chats/diagnostics-characteristics',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/diagnostico-caracteristica.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/diagnostics-characteristics.html',
+                        controller: 'DiagnosticsCharacteristicsCtrl'
                     }
                 }
             })
-            .state('tab.informacoes', {
-                url: '/chats/informacoes',
+            .state('tab.informations', {
+                url: '/chats/informations',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/informacoes.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/informations.html',
+                        controller: 'InformationsCtrl'
                     }
                 }
             })
-            .state('tab.materiais', {
-                url: '/chats/materiais',
+            .state('tab.materials', {
+                url: '/chats/materials',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/materiais.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/materials.html',
+                        controller: 'MaterialsCtrl'
                     }
                 }
             })
-            .state('tab.organizacao', {
-                url: '/chats/organizacao',
+            .state('tab.organization', {
+                url: '/chats/organization',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/organizacao.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/organization.html',
+                        controller: 'OrganizationCtrl'
                     }
                 }
             })
-            .state('tab.estudando', {
-                url: '/chats/estudando',
+            .state('tab.studies', {
+                url: '/chats/studies',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/estudando.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/studies.html',
+                        controller: 'StudiesCtrl'
                     }
                 }
             })
-            .state('tab.saude', {
-                url: '/chats/saude',
+            .state('tab.health', {
+                url: '/chats/health',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/saude.html',
-                        controller: 'CriancaCtrl'
+                        templateUrl: 'templates/health.html',
+                        controller: 'HealthCtrl'
                     }
                 }
             })
-            .state('tab.medicacao', {
-                url: '/chats/medicacao',
+            .state('tab.medications', {
+                url: '/chats/medications',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/medicacao.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/medications.html',
+                        controller: 'MedicationsCtrl'
                     }
                 }
             })
-            .state('tab.celebridades', {
-                url: '/chats/celebridades',
+            .state('tab.celebrities', {
+                url: '/chats/celebrities',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'templates/celebridades.html',
-                        controller: 'ChatsCtrl'
+                        templateUrl: 'templates/celebrities.html',
+                        controller: 'CelebritiesCtrl'
                     }
                 }
             })
-            .state('tab.chat-detail', {
-                url: '/chats/:chatId',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/chat-detail.html',
-                        controller: 'ChatDetailCtrl'
-                    }
-                }
-            })
+
+            //            .state('tab.chat-detail', {
+            //                url: '/chats/:chatId',
+            //                views: {
+            //                    'tab-chats': {
+            //                        templateUrl: 'templates/chat-detail.html',
+            //                        controller: 'ChatDetailCtrl'
+            //                    }
+            //                }
+            //            })
+
+            // Tab Emoção
             .state('tab.emotions', {
                 url: '/emotions',
                 views: {

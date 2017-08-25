@@ -20,8 +20,9 @@ angular.module('starter.controllers', [])
     .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
         $scope.chat = Chats.get($stateParams.chatId);
     })
+    .controller('DiagnosticsCtrl', function ($scope) {})
 
-    .controller('CriancaCtrl', function ($scope, $stateParams) {
+    .controller('DiagnosticsChildrenCtrl', function ($scope, $stateParams) {
         //        $scope.validacao = validacao;
         //        $scope.dados = {};
         //        var resultado = 0;
@@ -37,6 +38,16 @@ angular.module('starter.controllers', [])
         //
         //        };
     })
+
+    .controller('DiagnosticsAdultsCtrl', function ($scope) {})
+    .controller('DiagnosticsCharacteristicsCtrl', function ($scope) {})
+    .controller('InformationsCtrl', function ($scope) {})
+    .controller('MaterialsCtrl', function ($scope) {})
+    .controller('OrganizationCtrl', function ($scope) {})
+    .controller('StudiesCtrl', function ($scope) {})
+    .controller('HealthCtrl', function ($scope) {})
+    .controller('MedicationsCtrl', function ($scope) {})
+    .controller('CelebritiesCtrl', function ($scope) {})
 
     .controller('EmotionsCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
 
