@@ -7,6 +7,10 @@
                 <input ng-model="dados.url" type="text" placeholder="Foto">
             </label>
             <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
+            <button ng-click="tirarFoto()" class="button button-block button-positive">Tirar Foto</button>
+            <div class="item item-image">
+                <img src="{{dados.urlfoto}}">
+            </div>
         </div>
         <div class="row img-carregada" ng-show="!sentimento">
             <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">

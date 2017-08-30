@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
     .controller('MedicationsCtrl', function ($scope) {})
     .controller('CelebritiesCtrl', function ($scope) {})
 
-    .controller('EmotionsCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage) {
+    .controller('EmotionsCtrl', function ($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage, $cordovaCamera) {
 
         $scope.dados = {};
         $scope.enviado = false;
@@ -153,6 +153,22 @@ angular.module('starter.controllers', [])
                 $scope.emocao = true;
             }
             $scope.emocao = true;
+        }
+
+        $scope.tirarFoto = function() {
+
+            var options = {
+                destinationType: Camera.DestinationType.DATA_URL,
+                encodingType: Camera.EncodingType.JPEG
+            };
+
+            $cordovaCamera.getPicture(options)
+                .then(function(data){
+                    $scope.dados.urlfoto = "data:image/jpeg;base64," + data;
+                }, function(erro){
+                    console.log("Erro ao tirar foto: " + erro);
+                });
+
         }
 
     });
