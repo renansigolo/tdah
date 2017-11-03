@@ -155,7 +155,7 @@ angular.module('starter.controllers', [])
             $scope.emocao = true;
         }
 
-        $scope.tirarFoto = function() {
+        $scope.tirarFoto = function () {
 
             var options = {
                 destinationType: Camera.DestinationType.DATA_URL,
@@ -163,11 +163,15 @@ angular.module('starter.controllers', [])
             };
 
             $cordovaCamera.getPicture(options)
-                .then(function(data){
+                .then(function (data) {
                     $scope.dados.urlfoto = "data:image/jpeg;base64," + data;
-                }, function(erro){
+                }, function (erro) {
                     console.log("Erro ao tirar foto: " + erro);
                 });
+
+        }
+
+        $scope.uploadFoto = function () {
 
         }
 

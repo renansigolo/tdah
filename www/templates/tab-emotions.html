@@ -31,6 +31,44 @@
             </ion-list>
             <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-positive">Analisar outra emoção</button>
         </div>
+        <progress value="0" max="100" id="uploader">0%</progress>
+        <input type="file" value="upload" id="fileButton" />
+<!--<button ng-click="uploadFoto()">Enviar</button>-->
+        <script>
+            console.log('Aquiiiii !');
+            //Get Elements
+            var uploader = document.getElementById('uploader');
+            var fileButton = document.getElementById('fileButton');
+
+            //Listen for file selection
+            fileButton.addEventListener('change', function(e) {
+
+                //Get file
+                var file = e.target.files[0];
+                console.log('Get');
+
+                //Create a Storage Ref
+                var storageRef = firebase.storage().ref('test2/' + file.name);
+                console.log('Create Ref');
+
+                //Upload file
+                var task = storageRef.put(file);
+                console.log('Upload');
+
+                //Update progress bar
+                task.on('state_changed',
+
+                    function progress(snapshot) {
+                        var percentage = (snapshot.bytesTransferred / snpashot.totalBytes) * 100;
+                        uploader.value = percentage;
+                    },
+
+                    function error(err) {},
+                    function complete() {}
+                );
+            });
+
+        </script>
 
         <!-- <p ng-show="!enviado">ARQUIVO.</p>
         <div class="list list-inset" ng-show="!enviado">

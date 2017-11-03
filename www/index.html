@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -31,6 +32,7 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
 </head>
+
 <body ng-app="starter">
     <!--
     The nav bar that will be updated as we navigate between views.-->
@@ -44,29 +46,31 @@
     have templates inline in this html file if you'd like).-->
     <ion-nav-view></ion-nav-view>
 
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDmhXrBFJ82mtBlLGJ8qwfK_P2RSPkiZhs",
-        authDomain: "tdah-bb38c.firebaseapp.com",
-        databaseURL: "https://tdah-bb38c.firebaseio.com",
-        projectId: "tdah-bb38c",
-        storageBucket: "",
-        messagingSenderId: "622883480782"
-    };
-    firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBGv-WMHYHIgGSALPvzkXQGnXA_EUss2g0",
+            authDomain: "tdah-36baf.firebaseapp.com",
+            databaseURL: "https://tdah-36baf.firebaseio.com",
+            projectId: "tdah-36baf",
+            storageBucket: "tdah-36baf.appspot.com",
+            messagingSenderId: "304584961313"
+        };
+        firebase.initializeApp(config);
 
-    // Get a reference to the storage service, which is used to create references in your storage bucket
-    var storage = firebase.storage();
+        // Get a reference to the storage service, which is used to create references in your storage bucket
+        var storage = firebase.storage();
+
     </script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <!-- NgCordova -->
     <script src="lib/ng-cordova.min.js"></script>
 </body>
+
 </html>
