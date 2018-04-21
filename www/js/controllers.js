@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
   .controller('StudiesCtrl', function($scope) {})
   .controller('HealthCtrl', function($scope) {})
   .controller('MedicationsCtrl', function($scope) {})
-  .controller('CelebritiesCtrl', function($scope) {})
+  // .controller('CelebritiesCtrl', function($scope) {})
 
   .controller('EmotionsCtrl', function($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage, $cordovaCamera) {
 

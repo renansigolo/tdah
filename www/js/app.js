@@ -166,15 +166,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ngCordov
           }
         }
       })
-      .state('tab.celebrities', {
-        url: '/guide/celebrities',
-        views: {
-          'tab-guide': {
-            templateUrl: 'templates/celebrities.html',
-            controller: 'CelebritiesCtrl'
-          }
-        }
-      })
+      // .state('tab.celebrities', {
+      //   url: '/guide/celebrities',
+      //   views: {
+      //     'tab-guide': {
+      //       templateUrl: 'templates/celebrities.html',
+      //       controller: 'CelebritiesCtrl'
+      //     }
+      //   }
+      // })
 
       // Tab Emoção
       .state('tab.emotions', {
