@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="tk.tdah" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="tk.tdah" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TDAH</name>
     <description>An awesome TDAH app</description>
     <author email="renan.sigolo@gmail.com" href="https://renansigolo.com.br">Renan Sigolo</author>
@@ -46,6 +46,21 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference default="This app needs camera access" name="CAMERA_USAGE_DESCRIPTION" />
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>need camera access to take pictures</string>
+        </config-file>
+        <preference default="This app needs write-access to photo library" name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" />
+        <config-file parent="NSPhotoLibraryAddUsageDescription" target="*-Info.plist">
+            <string>need to photo library access to get pictures from there</string>
+        </config-file>
+        <preference default="This app needs read/write-access photo library access" name="PHOTOLIBRARY_USAGE_DESCRIPTION" />
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>need camera access to take pictures</string>
+        </config-file>
+        <config-file parent="ITSAppUsesNonExemptEncryption" target="*-Info.plist">
+            <false />
+        </config-file>
     </platform>
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
