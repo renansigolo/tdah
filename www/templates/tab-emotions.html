@@ -1,6 +1,7 @@
 <ion-view view-title="Emoção">
   <ion-content class="padding">
     <h3 ng-show="!enviado" id="frase-emocao" class="text-center">Cole o endereço (URL) da foto no campo abaixo</h3>
+
     <div class="list list-inset" ng-show="!enviado">
       <label class="item item-input">
                 <i class="icon ion-image placeholder-icon"></i>
@@ -12,13 +13,16 @@
         <img src="{{dados.urlfoto}}">
       </div>
     </div>
+
     <div class="row img-carregada" ng-show="!sentimento">
       <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
     </div>
+
     <div ng-show="!sentimento">
       <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
       <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-positive">Enviar outra foto</button>
     </div>
+
     <div class="emocao-revelada" ng-show="emocao">
       <h1 class="text-center">Você está se sentindo <strong>{{sentimento}}</strong> nesta foto.</h1>
       <ion-list>
@@ -31,24 +35,32 @@
       </ion-list>
       <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-positive">Analisar outra emoção</button>
     </div>
-    <progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton" />
-    <!--<button ng-click="uploadFoto()">Enviar</button>-->
+
+    <!-- <progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton" /> -->
+
+
+    <!-- <div ng-controller="UploadCtrl as $ctrl">
+      <file-upload on-change="$ctrl.onChange">
+        Upload
+      </file-upload>
+    </div> -->
+    <!-- <button ng-click="uploadFoto()">Enviar</button> -->
     <script>
-      console.log('Aquiiiii !');
       //Get Elements
       var uploader = document.getElementById('uploader');
       var fileButton = document.getElementById('fileButton');
 
       //Listen for file selection
       fileButton.addEventListener('change', function(e) {
+        console.log('Aquiiiii !');
 
         //Get file
         var file = e.target.files[0];
         console.log('Get');
 
         //Create a Storage Ref
-        var storageRef = firebase.storage().ref('test2/' + file.name);
+        var storageRef = firebase.storage().ref('faces/' + file.name);
         console.log('Create Ref');
 
         //Upload file
@@ -70,32 +82,33 @@
     </script>
 
     <!-- <p ng-show="!enviado">ARQUIVO.</p>
-        <div class="list list-inset" ng-show="!enviado">
-            <form action="gs://tdah-bb38c.appspot.com/">
-                <div class="">
-                    <div class="input-group">
-                        <label class="input-group-button">
+    <div class="list list-inset" ng-show="!enviado">
+      <form action="gs://tdah-bb38c.appspot.com/">
+        <div class="">
+          <div class="input-group">
+            <label class="input-group-button">
                             <span class="button btn-file">
                                 Escolher&hellip; <input type="file" ng-model="dados.newFile"  style="display: none;" id="file"  class="button">{{dados.newFile}}
                             </span>
                         </label>
-                        <input type="text" class="">
-                    </div>
-                    <input type="submit" class="button button-block button-positive enviar" value="Carregar Foto">
-                </div>
-            </form>
-            <button ng-click="carregarFoto()" class="button button-block button-positive">Enviar foto para análise</button>
-        </div> -->
-    <!-- <div class="row img-carregada" ng-show="!sentimento">
-            <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
+            <input type="text" class="">
+          </div>
+          <input type="submit" class="button button-block button-positive enviar" value="Carregar Foto">
         </div>
-        <div ng-show="!sentimento">
-            <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
-        </div>
-        <div class="emocao-revelada">
-            <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
+      </form>
+      <button ng-click="carregarFoto()" class="button button-block button-positive">Enviar foto para análise</button>
+    </div>
 
-        </div> -->
+    <div class="row img-carregada" ng-show="!sentimento">
+      <img ng-src="{{dados.url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
+    </div>
+    <div ng-show="!sentimento">
+      <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
+    </div>
+    <div class="emocao-revelada">
+      <h1 ng-show="sentimento">Você está se sentindo {{sentimento}} nesta foto.</h1>
+
+    </div> -->
 
   </ion-content>
 </ion-view>

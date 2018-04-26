@@ -28,10 +28,50 @@ angular.module('starter.controllers', [])
   .controller('StudiesCtrl', function($scope) {})
   .controller('HealthCtrl', function($scope) {})
   .controller('MedicationsCtrl', function($scope) {})
+  // .controller('UploadCtrl', function($scope) {
+  //   function UploadCtrl($firebaseStorage) {
+  //     var ctrl = this;
+  //     var storageRef = firebase.storage().ref("userProfiles/physicsmarie");
+  //     var storage = $firebaseStorage(storageRef);
+  //     ctrl.fileToUpload = null;
+  //     ctrl.onChange = function onChange(fileList) {
+  //       ctrl.fileToUpload = fileList[0];
+  //     };
+  //   }
+  // })
+
+//   .directive("fileUpload", function FileUploadDirective() {
+//   return {
+//     restrict: "E",
+//     transclude: true,
+//     scope: {
+//       onChange: "="
+//     },
+//     template: '<input type="file" name="file" /><label><ng-transclude></ng-transclude></label>',
+//     link: function (scope, element, attrs) {
+//       element.bind("change", function () {
+//         scope.onChange(element.children()[0].files);
+//       });
+//     }
+//   }
+// })
+
   // .controller('CelebritiesCtrl', function($scope) {})
-
   .controller('EmotionsCtrl', function($scope, $http, emotionApiService, $firebaseArray, $firebaseStorage, $cordovaCamera) {
+// FIREBASE Storage - Image Upload
+ // $scope.uploadImage = function uploadImage() {
+ //      // create a Storage reference for the $firebaseStorage binding
+ //      var storageRef = firebase.storage().ref('faces/physicsmarie');
+ //      var storage = $firebaseStorage(storageRef);
+ //      // var file = FileUploadDirective()// get a file from the template (see Retrieving files from template section below)
+ //      var uploadTask = storage.$put(file);
+ //      // of upload via a RAW, base64, or base64url string
+ //      var stringUploadTask = storage.$putString('5b6p5Y+344GX44G+44GX44Gf77yB44GK44KB44Gn44Go44GG77yB', 'base64');
+ //
+ //    EmotionsCtrl.$inject = ["$firebaseStorage"];
+ //  }
 
+// FACE API
     $scope.dados = {};
     $scope.enviado = false;
     $scope.emocao = false;
@@ -45,10 +85,10 @@ angular.module('starter.controllers', [])
       } else {
         $http({
           method: 'POST',
-          url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+          url: 'https://brazilsouth.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceAttributes=emotion',
           headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': '275d8596280a42b09a03251b73396358'
+            'Ocp-Apim-Subscription-Key': '18ea132440b04df183d5cb92326104d6'
           },
           data: "{ url: '" + $scope.dados.url + "' }"
         }).then(function(respostaSucesso) {
@@ -75,9 +115,10 @@ angular.module('starter.controllers', [])
 
     $scope.encontrarSentimento = function() {
       var resultado = emotionApiService.GetResultadoApi();
+      console.log('RESULTADO', resultado)
       $scope.sentimentos = [{
           sentimento: 'com raiva',
-          valor: resultado.scores.anger,
+          valor: resultado.faceAttributes.emotion.anger,
           sugestao: 'Para diminuir sua raiva tente as seguintes sugestões',
           sugestao1: 'Respire fundo durante 30 segundos',
           sugestao2: 'Vá dar uma volta',
@@ -85,7 +126,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'com desprezo',
-          valor: resultado.scores.contempt,
+          valor: resultado.faceAttributes.emotion.contempt,
           sugestao: 'Para diminuir o desprezo sentido tente as seguintes sugestões',
           sugestao1: 'Pense em coisas positivas',
           sugestao2: 'Tente usar empatia',
@@ -93,7 +134,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'com nojo',
-          valor: resultado.scores.disgust,
+          valor: resultado.faceAttributes.emotion.disgust,
           sugestao: 'Para miminizar o sentimento de nojo tente as seguintes sugetões',
           sugestao1: 'Tente entender o lado alheio',
           sugestao2: 'Saiba que nem todos funcionam da mesma forma',
@@ -101,7 +142,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'com medo',
-          valor: resultado.scores.fear,
+          valor: resultado.faceAttributes.emotion.fear,
           sugestao: 'Para diminuir seu medo tente as seguintes sugestões',
           sugestao1: 'Pense positivamente',
           sugestao2: 'Tente formular soluções em um cenário positivo',
@@ -109,7 +150,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'feliz',
-          valor: resultado.scores.happiness,
+          valor: resultado.faceAttributes.emotion.happiness,
           sugestao: 'Aproveite esse momento de felicidade para',
           sugestao1: 'Se comunicar com as pessoas',
           sugestao2: 'Formular ideias para eventos futuros',
@@ -117,7 +158,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'neutro(a)',
-          valor: resultado.scores.neutral,
+          valor: resultado.faceAttributes.emotion.neutral,
           sugestao: 'Aproveite o estado neutro para',
           sugestao1: 'Criar novas ideias',
           sugestao2: 'Planejar futuras ações',
@@ -125,7 +166,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'triste',
-          valor: resultado.scores.sadness,
+          valor: resultado.faceAttributes.emotion.sadness,
           sugestao: 'Para diminuir sua tristeza tente as seguintes sugestões:',
           sugestao1: 'Lembre-se da sua âncora',
           sugestao2: 'Pense em pessoas que te deixem feliz',
@@ -133,7 +174,7 @@ angular.module('starter.controllers', [])
         },
         {
           sentimento: 'surpreso(a)',
-          valor: resultado.scores.surprise,
+          valor: resultado.faceAttributes.emotion.surprise,
           sugestao: 'Para minimizar o estado de surpresa tente o seguinte',
           sugestao1: 'Tente se lembrar de situações semelhantes a essa',
           sugestao2: 'Busque situações similares',
