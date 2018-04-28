@@ -5,7 +5,7 @@
     <hr>
     <div class="card">
       <ion-list>
-        <div class="item item-divider bar bar-header bar-energized text-center">Desatenção</div>
+        <div class="item item-divider bar bar-header bar-calm text-center">Desatenção</div>
         <p class="item item-divider item-text-wrap">1. Não consegue prestar muita atenção a detalhes ou comete erros por descuido nos trabalhos da escola ou tarefas </p>
         <ion-list>
           <ion-radio name="choice1" ng-model="dados.choice1" value="1">Sim</ion-radio>
@@ -108,7 +108,7 @@
     <ion-list>
       <!--Se existem pelo menos 6 itens marcados como “BASTANTE” ou “DEMAIS” de 10 a 18-->
       <div class="card">
-        <div class="item item-divider bar bar-header bar-energized text-center">Desatenção</div>
+        <div class="item item-divider bar bar-header bar-calm text-center">Desatenção</div>
         <div class="item item-text-wrap">O resultado é: {{ dados.choice1 -- dados.choice2 -- dados.choice3 -- dados.choice4 -- dados.choice5 -- dados.choice6 -- dados.choice7 -- dados.choice8 -- dados.choice9 }}</div>
         <div class="item item-text-wrap">Se o resultado for maior ou igual a 6. Existem mais sintomas de desatenção que o esperado numa criança ou adolescente.</div>
       </div>

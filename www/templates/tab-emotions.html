@@ -5,11 +5,11 @@
     <div class="list list-inset" ng-show="!enviado">
       <label class="item item-input">
                 <i class="icon ion-image placeholder-icon"></i>
-                <input ng-model="dados.url" type="text" placeholder="Foto">
+                <input ng-model="dados.url" type="text" placeholder="URL da imagem">
             </label>
-      <button ng-click="carregarFoto()" class="button button-block button-positive">Carregar Foto</button>
-      <button ng-click="tirarFoto()" class="button button-block button-positive">Tirar Foto</button>
-      <div class="item item-image">
+      <button ng-click="carregarFoto()" class="button button-block button-royal">Carregar Foto</button>
+      <!-- <button ng-click="tirarFoto()" class="button button-block button-royal">Tirar Foto</button> -->
+      <div class="item item-image" ng-show="{{dados.urlfoto}}">
         <img src="{{dados.urlfoto}}">
       </div>
     </div>
@@ -19,8 +19,8 @@
     </div>
 
     <div ng-show="!sentimento">
-      <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-positive">Confirmar Foto</button>
-      <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-positive">Enviar outra foto</button>
+      <button ng-click="encontrarSentimento()" ng-show="enviado" class="button button-block button-royal">Analisar Foto!</button>
+      <button ng-click="enviarNovaFoto()" ng-show="enviado" class="button button-block button-outline button-dark">Enviar outra foto</button>
     </div>
 
     <div class="emocao-revelada" ng-show="emocao">
@@ -33,7 +33,7 @@
         <ion-item class="item-text-wrap" ng-show="sugestao2">{{sugestao2}}</ion-item>
         <ion-item class="item-text-wrap" ng-show="sugestao3">{{sugestao3}}</ion-item>
       </ion-list>
-      <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-positive">Analisar outra emoção</button>
+      <button ng-click="enviarNovaEmocao()" ng-show="sentimento" class="button button-block button-outline button-royal">Analisar outra emoção</button>
     </div>
 
     <!-- <progress value="0" max="100" id="uploader">0%</progress>
@@ -46,7 +46,7 @@
       </file-upload>
     </div> -->
     <!-- <button ng-click="uploadFoto()">Enviar</button> -->
-    <script>
+    <!-- <script>
       //Get Elements
       var uploader = document.getElementById('uploader');
       var fileButton = document.getElementById('fileButton');
@@ -79,7 +79,7 @@
           function complete() {}
         );
       });
-    </script>
+    </script> -->
 
     <!-- <p ng-show="!enviado">ARQUIVO.</p>
     <div class="list list-inset" ng-show="!enviado">

@@ -2,16 +2,26 @@
  * ===============
  *
  * All variables and most of the configuration is defined on this page. */
-
-
 /* Colors */
-
-
 /* HEX */
+// $red: #ff0303;
+// $yellow: #ffed00;
+// $green: #008026;
+// $orange: #ff8c00;
+// $blue: #004dff;
+// $purple: #750787;
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
 
-$red: #ff0303;
-$yellow: #ffed00;
-$green:#008026;
-$orange: #ff8c00;
-$blue:#004dff;
-$purple: #750787;
+For example, you might change some of the default colors:
+*/
+$light: #fff !default;
+$stable: #f8f8f8 !default;
+$positive: #387ef5 !default;
+$calm: #ff8c00 !default;
+$balanced: #33cd5f !default;
+$energized: #ffc900 !default;
+$assertive: #ef473a !default;
+$royal: #750787 !default;
+$dark: #444 !default;
