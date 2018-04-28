@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
       $scope.sentimentos = [{
           sentimento: 'com raiva',
           valor: resultado.faceAttributes.emotion.anger,
-          sugestao: 'Para diminuir sua raiva tente as seguintes sugestões',
+          sugestao: 'Para diminuir sua raiva tente as seguintes sugestões:',
           sugestao1: 'Respire fundo durante 30 segundos',
           sugestao2: 'Vá dar uma volta',
           sugestao3: 'Tome um copa de água',
@@ -127,7 +127,7 @@ angular.module('starter.controllers', [])
         {
           sentimento: 'com desprezo',
           valor: resultado.faceAttributes.emotion.contempt,
-          sugestao: 'Para diminuir o desprezo sentido tente as seguintes sugestões',
+          sugestao: 'Para diminuir o desprezo sentido tente as seguintes sugestões:',
           sugestao1: 'Pense em coisas positivas',
           sugestao2: 'Tente usar empatia',
           sugestao3: 'Pense que a situação do outro lado possa ser mais complicada do que você imagina',
@@ -135,7 +135,7 @@ angular.module('starter.controllers', [])
         {
           sentimento: 'com nojo',
           valor: resultado.faceAttributes.emotion.disgust,
-          sugestao: 'Para miminizar o sentimento de nojo tente as seguintes sugetões',
+          sugestao: 'Para miminizar o sentimento de nojo tente as seguintes sugetões:',
           sugestao1: 'Tente entender o lado alheio',
           sugestao2: 'Saiba que nem todos funcionam da mesma forma',
           sugestao3: 'Pense que ações diferentes geram atitudes diferentes',
@@ -143,7 +143,7 @@ angular.module('starter.controllers', [])
         {
           sentimento: 'com medo',
           valor: resultado.faceAttributes.emotion.fear,
-          sugestao: 'Para diminuir seu medo tente as seguintes sugestões',
+          sugestao: 'Para diminuir seu medo tente as seguintes sugestões:',
           sugestao1: 'Pense positivamente',
           sugestao2: 'Tente formular soluções em um cenário positivo',
           sugestao3: 'Fique calmo que tudo vai dar certo se você desejar e se empenhar para isso',
@@ -151,7 +151,7 @@ angular.module('starter.controllers', [])
         {
           sentimento: 'feliz',
           valor: resultado.faceAttributes.emotion.happiness,
-          sugestao: 'Aproveite esse momento de felicidade para',
+          sugestao: 'Aproveite esse momento de felicidade para...',
           sugestao1: 'Se comunicar com as pessoas',
           sugestao2: 'Formular ideias para eventos futuros',
           sugestao3: 'Curta esse momento',
@@ -159,7 +159,7 @@ angular.module('starter.controllers', [])
         {
           sentimento: 'neutro(a)',
           valor: resultado.faceAttributes.emotion.neutral,
-          sugestao: 'Aproveite o estado neutro para',
+          sugestao: 'Aproveite o estado neutro para...',
           sugestao1: 'Criar novas ideias',
           sugestao2: 'Planejar futuras ações',
           sugestao3: 'Organizar suas coisas',
@@ -196,24 +196,24 @@ angular.module('starter.controllers', [])
       $scope.emocao = true;
     }
 
-    $scope.tirarFoto = function() {
-
-      var options = {
-        destinationType: Camera.DestinationType.DATA_URL,
-        encodingType: Camera.EncodingType.JPEG
-      };
-
-      $cordovaCamera.getPicture(options)
-        .then(function(data) {
-          $scope.dados.urlfoto = "data:image/jpeg;base64," + data;
-        }, function(erro) {
-          console.log("Erro ao tirar foto: " + erro);
-        });
-
-    }
-
-    $scope.uploadFoto = function() {
-
-    }
+    // $scope.tirarFoto = function() {
+    //
+    //   var options = {
+    //     destinationType: Camera.DestinationType.DATA_URL,
+    //     encodingType: Camera.EncodingType.JPEG
+    //   };
+    //
+    //   $cordovaCamera.getPicture(options)
+    //     .then(function(data) {
+    //       $scope.dados.urlfoto = "data:image/jpeg;base64," + data;
+    //     }, function(erro) {
+    //       console.log("Erro ao tirar foto: " + erro);
+    //     });
+    //
+    // }
+    //
+    // $scope.uploadFoto = function() {
+    //
+    // }
 
   });
