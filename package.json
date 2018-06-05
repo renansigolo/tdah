@@ -6,9 +6,15 @@
     "type": "git",
     "url": "https://github.com/renansigolo/tdah.git"
   },
-  "scripts":{
+  "scripts": {
     "serve": "ionic serve",
-    "prettier": "prettier --config ./.prettierrc.json --write \"www/js/**/*.js\""
+    "prettier": "prettier --config ./.prettierrc.json --write \"www/js/**/*.js\"",
+    "build-ios": "ionic cordova build ios --buildConfig",
+    "build-android": "ionic cordova build android",
+    "build-ios-prod": "ionic cordova build ios --buildConfig --prod --release",
+    "build-android-prod": "ionic cordova build android --prod --release",
+    "build-dev": "yarn prettier && yarn build-ios && yarn build-android",
+    "build-prod": "yarn prettier && yarn build-ios-prod && yarn build-android-prod"
   },
   "license": "MIT",
   "dependencies": {
