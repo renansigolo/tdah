@@ -1,30 +1,41 @@
 {
   "name": "tdah",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "An awesome TDAH app",
   "repository": {
     "type": "git",
     "url": "https://github.com/renansigolo/tdah.git"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^3.5.6",
-    "gulp-clean-css": "^3.9.3",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^4.0.1",
-    "ionic": "^3.20.0"
+  "scripts": {
+    "serve": "ionic serve",
+    "prettier": "prettier --config ./.prettierrc.json --write \"www/js/**/*.js\"",
+    "build-ios": "ionic cordova build ios --buildConfig",
+    "build-android": "ionic cordova build android",
+    "build-ios-prod": "ionic cordova build ios --buildConfig --prod --release",
+    "build-android-prod": "ionic cordova build android --prod --release",
+    "build-dev": "yarn prettier && yarn build-ios && yarn build-android",
+    "build-prod": "yarn prettier && yarn build-ios-prod && yarn build-android-prod"
   },
+  "license": "MIT",
   "dependencies": {
     "angularfire": "^2.3.0",
     "cordova-android": "7.1.0",
-    "cordova-ios": "4.5.4",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
-    "firebase": "^4.13.1",
+    "firebase": "^5.0.4",
     "ionic-plugin-keyboard": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "ionic": "^3.20.0",
+    "prettier": "^1.13.4"
   },
   "cordova": {
     "plugins": {

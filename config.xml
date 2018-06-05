@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="tk.tdah" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="tk.tdah" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TDAH</name>
     <description>An awesome TDAH app</description>
     <author email="renan.sigolo@gmail.com" href="https://renansigolo.com.br">Renan Sigolo</author>
@@ -12,6 +12,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*://*youtube.com" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -68,7 +69,7 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="cordova-plugin-camera" spec="^3.0.0" />
-    <engine name="android" spec="7.1.0" />
-    <engine name="ios" spec="4.5.4" />
     <allow-navigation href="http://192.168.1.13:8101" />
+    <engine name="android" spec="7.1.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>
