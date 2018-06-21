@@ -7,20 +7,21 @@
     "url": "https://github.com/renansigolo/tdah.git"
   },
   "scripts": {
-    "serve": "ionic serve",
-    "prettier": "prettier --config ./.prettierrc.json --write \"www/js/**/*.js\"",
-    "build-ios": "ionic cordova build ios --buildConfig",
-    "build-android": "ionic cordova build android",
-    "build-ios-prod": "ionic cordova build ios --buildConfig --prod --release",
     "build-android-prod": "ionic cordova build android --prod --release",
+    "build-android": "ionic cordova build android",
     "build-dev": "yarn prettier && yarn build-ios && yarn build-android",
-    "build-prod": "yarn prettier && yarn build-ios-prod && yarn build-android-prod"
+    "build-ios-prod": "ionic cordova build ios --buildConfig --prod --release",
+    "build-ios": "ionic cordova build ios --buildConfig",
+    "build-prod": "yarn prettier && yarn build-ios-prod && yarn build-android-prod",
+    "prettier": "prettier --config ./.prettierrc.json --write \"www/js/**/*.js\"",
+    "serve": "ionic serve",
+    "update": "yarn upgrade-interactive --latest"
   },
   "license": "MIT",
   "dependencies": {
     "angularfire": "^2.3.0",
-    "cordova-android": "7.1.0",
-    "cordova-ios": "^4.5.4",
+    "cordova-android": "~7.1.0",
+    "cordova-ios": "~4.5.4",
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -30,12 +31,12 @@
     "ionic-plugin-keyboard": "^2.2.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.4",
-    "gulp-rename": "^1.2.3",
+    "gulp-rename": "^1.3.0",
     "gulp-sass": "^4.0.1",
+    "gulp": "^3.9.1",
     "ionic": "^3.20.0",
-    "prettier": "^1.13.4"
+    "prettier": "^1.13.5"
   },
   "cordova": {
     "plugins": {
